@@ -134,4 +134,3 @@ The ETL process consists of three main tasks orchestrated by Airflow:
 *   **Environment Management:** `python-dotenv` (for local loading of `.env` by plugin scripts)
 *   **Version Control:** Git & GitHub
 
-## Project Structure
