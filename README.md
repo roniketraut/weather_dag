@@ -11,8 +11,6 @@ Transformation: Cleans and reshapes the raw API data into a structured format su
 Loading: Loads the transformed data into a specified table in a PostgreSQL database.
 Orchestration: Uses Apache Airflow for scheduling (e.g., daily runs) and monitoring the pipeline.
 Containerized: Leverages Docker and Docker Compose for a consistent and isolated development and execution environment.
-Project Structure
-. ├── dags/ │ └── youtube_pipeline_dag.py # The main Airflow DAG file ├── plugins/ │ └── youtube/ # Custom Python modules for the pipeline │ ├── init.py │ ├── data_transformation.py # Handles data cleaning and transformation │ ├── load_data.py # Handles loading data to PostgreSQL │ └── settings.py # Contains API key loading, channel list, and data extraction logic ├── .env.example # Example environment file for configuration ├── docker-compose.yml # Docker Compose file to set up Airflow and PostgreSQL ├── requirements.txt # (Optional) Python dependencies for custom plugins ├── .gitignore └── README.md
 
 Prerequisites
 Docker
@@ -96,26 +94,8 @@ This project implements a robust, automated End-to-End (ETL) data pipeline desig
 2.  **Transform** the collected raw data into a structured and usable format.
 3.  **Load** the processed data into an AWS S3 bucket, creating a historical weather dataset.
 
-The entire workflow is orchestrated and scheduled using Apache Airflow, ensuring efficient and reliable data processing.
+The entire workflow is orchestrated and scheduled using Apache Airflow, ensuring efficient and reliable data processingg
 
-## Table of Contents
-
-- [Features](#features)
-- [Workflow Overview](#workflow-overview)
-- [Technology Stack](#technology-stack)
-- [Project Structure](#project-structure)
-- [Prerequisites](#prerequisites)
-- [Setup and Configuration](#setup-and-configuration)
-  - [1. Clone the Repository](#1-clone-the-repository)
-  - [2. Set Up Python Environment](#2-set-up-python-environment)
-  - [3. Configure Environment Variables](#3-configure-environment-variables)
-  - [4. Set Up Airflow Connection for AWS](#4-set-up-airflow-connection-for-aws)
-  - [5. Prepare AWS S3 Bucket](#5-prepare-aws-s3-bucket)
-- [Airflow Setup](#airflow-setup)
-- [Running the DAG](#running-the-dag)
-- [Future Enhancements](#future-enhancements)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
