@@ -1,6 +1,6 @@
 This repo contains two pipelines. One is Youtube Data Pipeline with Apache Airflow and the other is Automated Weather Data ETL Pipeline with Airflow and AWS S3
 
-YouTube Data Pipeline with Apache Airflow
+## YouTube Data Pipeline with Apache Airflow
 This project implements an ETL (Extract, Transform, Load) data pipeline using Apache Airflow to collect statistics for a predefined list of YouTube channels. The pipeline extracts data using the YouTube Data API v3, transforms it using Pandas, and loads the processed data into a PostgreSQL database.
 
 The entire Airflow environment, including the PostgreSQL database for Airflow's metadata and the target database for YouTube stats, is containerized using Docker Compose for easy setup and portability.
@@ -45,9 +45,9 @@ Prepare Target Database and Table (First Time Only): The pipeline appends data. 
 
 Connect to the postgres Docker container:
 docker exec -it <your_project_name>_postgres_1 psql -U airflow -d airflow
-# Replace <your_project_name>_postgres_1 with the actual container name (use `docker ps`)
-# The default user/db in the postgres container (from official Airflow docker-compose) is airflow/airflow.
-# If you are connecting to a different user/db for youtube_stats, adjust accordingly.
+Replace <your_project_name>_postgres_1 with the actual container name (use `docker ps`)
+The default user/db in the postgres container (from official Airflow docker-compose) is airflow/airflow.
+If you are connecting to a different user/db for youtube_stats, adjust accordingly.
 Inside psql, create the youtube_stats database if it doesn't exist (if your postgres_default connection is not using the airflow database):
 -- If connecting as 'airflow' user to 'airflow' db, you might want to create a new user and DB for youtube_stats for separation
 -- For simplicity, if using the 'postgres' superuser for 'postgres_default' connection:
@@ -87,7 +87,7 @@ Transformations: Update the logic in plugins/youtube/data_transformation.py.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# Automated Weather Data ETL Pipeline with Airflow and AWS S3
+## Automated Weather Data ETL Pipeline with Airflow and AWS S3
 
 This project implements a robust, automated End-to-End (ETL) data pipeline designed to:
 1.  **Extract** daily weather information for a curated list of global cities using the OpenWeatherMap API.
