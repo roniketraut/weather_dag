@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env     
+logs/              
+.pytest_cache/
+.mypy_cache/
+.DS_Store
+venv/
+airflow-volume/     
+*.csv   
+dags/*
+# BUT, do NOT ignore your specific DAG file
+!dags/youtube_pipeline_dag.py
